@@ -75,7 +75,7 @@ Good luck!
 
 # Challenge Lodgify
 ## Testing:
-Se usó cypress para realizar los tests, básicamente mi premisa fue realizar una prueba de integración donde simularamos una interacción real pero interceptando todos los llamados al backend o terceros y aparte revisando los elementos de la página, en el caso del slider usando TDD. Opté por usar `data-automation` en vez de usar selectores CSS o del DOM porque estos le aportan mantenibilidad a la prueba (cuando fue posible). También uso una especie de page object model sin ser propiamente POM.
+Se usó cypress para realizar los tests, básicamente mi premisa fue realizar una prueba de integración donde simularamos una interacción real pero interceptando todos los llamados al backend o terceros y aparte revisando los elementos de la página, en el caso del slider usando TDD. Opté por usar `data-automation` en vez de usar selectores CSS o del DOM porque estos le aportan mantenibilidad a la prueba (cuando fue posible). También usé una especie de page object model sin ser propiamente POM.
 Para correr las pruebas headless debes correr:
 ```
 npm run cy:ci
@@ -90,6 +90,7 @@ y seleccionar la prueba
 
 Utilicé el modulo `start-server-and-test` para iniciar el servidor y las pruebas al mismo tiempo.
 ## CI/CD:
+Quisé agregar adicionalmente una simulación de CI/CD.
 Se usó circleci como CI, toda la configuración se encuentra en `.circleci/config.yml`, creé varios Jobs que considero son básicos para mantener integridad del código, como lo son:
 - Instalar las dependencias
 - Un lint del commit (que realizo en el pre-commit con husky) (para usar la sintaxis de los commits y generar la versión de manera automática usando `semantic-release`) y una revisión de licencias de las librerías.
@@ -106,5 +107,6 @@ npm run commit
 Cuando se corre el semantic release en el CI, el genera una imagen a partir del commit y crea un tag y un release en github, y usando esa misma versión se puede tagear la imagen para que todos esten relacionados con la misma versión.
 
 ## Nota:
-1: 
-2: Me hubiera gustado invertirle más tiempo, pero estoy en semana de despliegues y no tengo mucho tiempo disponible, porque son muchos sitios y nos exijen una regresión. Cualquier duda siempre a la ordén. También, de antemano muchas gracias por la oportunidad!
+1: Sobre los errores de la aplicación, aparte de los errores de CORS (que no considero que se deban reportar porque andamos en un ambiente local y esas URL se deben interceptar), me hubiera gustado ver más sobre el backend, también tengo experiencia desarrollando pruebas de integración en jest, usualmente usando docker y otras herramintas.
+2: Usé un comando de cypress que hace un bypass a los errores, no es para uso cotidiano, solo para la realización de este reto.
+3: Me hubiera gustado invertirle más tiempo, pero estoy en semana de despliegues y no tengo mucho tiempo disponible, porque son muchos sitios y nos exijen una regresión. Cualquier duda siempre a la ordén. También, de antemano muchas gracias por la oportunidad!
