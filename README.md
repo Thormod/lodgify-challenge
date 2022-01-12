@@ -75,7 +75,7 @@ Good luck!
 
 # Challenge Lodgify
 ## Testing:
-Se usó cypress para realizar los tests, básicamente mi premisa fue realizar una prueba de integración donde simularamos una interacción real pero interceptando todos los llamados al backend o terceros y aparte revisando los elementos de la página, en el caso del slider usando TDD. Ppté por usar `data-automation` en vez de usar selectores porque estos le aportan mantenibilidad a la prueba (cuando fue posible). 
+Se usó cypress para realizar los tests, básicamente mi premisa fue realizar una prueba de integración donde simularamos una interacción real pero interceptando todos los llamados al backend o terceros y aparte revisando los elementos de la página, en el caso del slider usando TDD. Opté por usar `data-automation` en vez de usar selectores CSS o del DOM porque estos le aportan mantenibilidad a la prueba (cuando fue posible). También uso una especie de page object model sin ser propiamente POM.
 Para correr las pruebas headless debes correr:
 ```
 npm run cy:ci
@@ -84,15 +84,11 @@ Para correr las pruebas headed debes correr:
 ```
 npm run dev-server
 y en otra terminal
-npm run cypress:open
+npm run cy:open
 y seleccionar la prueba
 ```
 
 Utilicé el modulo `start-server-and-test` para iniciar el servidor y las pruebas al mismo tiempo.
-
-## Buenas prácticas:
-Usé herramientas que nos permiten añadirle mantenibilidad al código fuente como lo son eslint y commitlint. (que son analizadores de código estático).
-
 ## CI/CD:
 Se usó circleci como CI, toda la configuración se encuentra en `.circleci/config.yml`, creé varios Jobs que considero son básicos para mantener integridad del código, como lo son:
 - Instalar las dependencias
@@ -110,4 +106,5 @@ npm run commit
 Cuando se corre el semantic release en el CI, el genera una imagen a partir del commit y crea un tag y un release en github, y usando esa misma versión se puede tagear la imagen para que todos esten relacionados con la misma versión.
 
 ## Nota:
-Me hubiera gustado invertirle más tiempo, pero estoy en semana de despliegues y no tengo mucho tiempo disponible, porque son muchos sitios y nos exijen una regresión. Cualquier duda siempre a la ordén.
+1: 
+2: Me hubiera gustado invertirle más tiempo, pero estoy en semana de despliegues y no tengo mucho tiempo disponible, porque son muchos sitios y nos exijen una regresión. Cualquier duda siempre a la ordén. También, de antemano muchas gracias por la oportunidad!
