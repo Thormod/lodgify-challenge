@@ -87,8 +87,9 @@ workflows:
       - build-artifact:
           filters:
             branches:
+            ## Should be main branch, but just for the challenge will be my branch
               only:
-                - main
+                - automation-challenge-sebastian-zapata
           context:
             - github
           requires:

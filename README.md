@@ -96,9 +96,8 @@ Usé herramientas que nos permiten añadirle mantenibilidad al código fuente co
 ## CI/CD:
 Se usó circleci como CI, toda la configuración se encuentra en `.circleci/config.yml`, creé varios Jobs que considero son básicos para mantener integridad del código, como lo son:
 - Instalar las dependencias
-- Un lint del código (que realizo en el pre-commit con husky) con un lint del commit (para usar la sintaxis de los commits y generar la versión de manera automática usando `semantic-release`) y una revisión de licencias de las librerías.
+- Un lint del commit (que realizo en el pre-commit con husky) (para usar la sintaxis de los commits y generar la versión de manera automática usando `semantic-release`) y una revisión de licencias de las librerías.
 - Pruebas de integración -> Opté por las pruebas de integración porque son las que mejor revisan el sistema, estamos realmente realizando una interacción real con el sistema sin dejar de ser pruebas de bajo nivel, rápidas y efectivas.
-- Creación de una imagen de docker, finalmente agregé un pequeño dockerfile para simular lo que haría el CI en caso de que las pruebas se ejecuten satisfactoriamente, que es generar la imagen nueva, buildearla y tagearla para luego hacerle push al hub de imagenes (done se tenga).
 
 Cada vez que un desarrollador crea una rama y envía un commit, circleci tiene un webhook que escucha y ejecuta los workflows según sea el caso (si es la rama principal ejecuta el build de la imagen).
 También configuré los branch protection rules para que no se pueda mergear nada sin que pasen las pruebas y sin que haya un PR.
