@@ -1,0 +1,9 @@
+{
+  "baseUrl": "http://localhost:8080/",
+  "viewportWidth": 1920,
+  "viewportHeight": 1080,
+  "reporter": "junit",
+  "reporterOptions": {
+    "mochaFile": "test-results/cypress/results.xml"
+  }
+}

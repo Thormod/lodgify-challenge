@@ -1,0 +1,226 @@
+{
+  "currencies": [
+    {
+      "option": "$ USD",
+      "data": [
+        {
+          "type": "montly",
+          "data": [
+            {
+              "numberOfRentals": 0,
+              "starterPrice": 17,
+              "professionalPrice": 46,
+              "ultimatePrice": 69
+            },
+            {
+              "numberOfRentals": 50,
+              "starterPrice": 92,
+              "professionalPrice": 536,
+              "ultimatePrice": 741
+            },
+            {
+              "numberOfRentals": 100,
+              "starterPrice": 127,
+              "professionalPrice": 965,
+              "ultimatePrice": 1313
+            }
+          ]
+        },
+        {
+          "type": "yearly",
+          "data": [
+            {
+              "numberOfRentals": 0,
+              "starterPrice": 12,
+              "professionalPrice": 32,
+              "ultimatePrice": 48
+            },
+            {
+              "numberOfRentals": 50,
+              "starterPrice": 64,
+              "professionalPrice": 375,
+              "ultimatePrice": 518
+            },
+            {
+              "numberOfRentals": 100,
+              "starterPrice": 89,
+              "professionalPrice": 675,
+              "ultimatePrice": 918
+            }
+          ]
+        },
+        {
+          "type": "two-years",
+          "data": [
+            {
+              "numberOfRentals": 0,
+              "starterPrice": 11,
+              "professionalPrice": 30,
+              "ultimatePrice": 45
+            },
+            {
+              "numberOfRentals": 50,
+              "starterPrice": 60,
+              "professionalPrice": 352,
+              "ultimatePrice": 486
+            },
+            {
+              "numberOfRentals": 100,
+              "starterPrice": 83,
+              "professionalPrice": 633,
+              "ultimatePrice": 861
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "option": "€ EUR",
+      "data": [
+        {
+          "type": "montly",
+          "data": [
+            {
+              "numberOfRentals": 0,
+              "starterPrice": 16,
+              "professionalPrice": 40,
+              "ultimatePrice": 61
+            },
+            {
+              "numberOfRentals": 50,
+              "starterPrice": 85,
+              "professionalPrice": 472,
+              "ultimatePrice": 666
+            },
+            {
+              "numberOfRentals": 100,
+              "starterPrice": 117,
+              "professionalPrice": 858,
+              "ultimatePrice": 1181
+            }
+          ]
+        },
+        {
+          "type": "yearly",
+          "data": [
+            {
+              "numberOfRentals": 0,
+              "starterPrice": 11,
+              "professionalPrice": 28,
+              "ultimatePrice": 43
+            },
+            {
+              "numberOfRentals": 50,
+              "starterPrice": 60,
+              "professionalPrice": 330,
+              "ultimatePrice": 466
+            },
+            {
+              "numberOfRentals": 100,
+              "starterPrice": 82,
+              "professionalPrice": 600,
+              "ultimatePrice": 826
+            }
+          ]
+        },
+        {
+          "type": "two-years",
+          "data": [
+            {
+              "numberOfRentals": 0,
+              "starterPrice": 10,
+              "professionalPrice": 26,
+              "ultimatePrice": 40
+            },
+            {
+              "numberOfRentals": 50,
+              "starterPrice": 56,
+              "professionalPrice": 309,
+              "ultimatePrice": 437
+            },
+            {
+              "numberOfRentals": 100,
+              "starterPrice": 77,
+              "professionalPrice": 563,
+              "ultimatePrice": 774
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "option": "£ GBP",
+      "data": [
+        {
+          "type": "montly",
+          "data": [
+            {
+              "numberOfRentals": 0,
+              "starterPrice": 14,
+              "professionalPrice": 34,
+              "ultimatePrice": 56
+            },
+            {
+              "numberOfRentals": 50,
+              "starterPrice": 73,
+              "professionalPrice": 420,
+              "ultimatePrice": 592
+            },
+            {
+              "numberOfRentals": 100,
+              "starterPrice": 102,
+              "professionalPrice": 764,
+              "ultimatePrice": 1050
+            }
+          ]
+        },
+        {
+          "type": "yearly",
+          "data": [
+            {
+              "numberOfRentals": 0,
+              "starterPrice": 10,
+              "professionalPrice": 24,
+              "ultimatePrice": 39
+            },
+            {
+              "numberOfRentals": 50,
+              "starterPrice": 51,
+              "professionalPrice": 294,
+              "ultimatePrice": 414
+            },
+            {
+              "numberOfRentals": 100,
+              "starterPrice": 71,
+              "professionalPrice": 534,
+              "ultimatePrice": 734
+            }
+          ]
+        },
+        {
+          "type": "two-years",
+          "data": [
+            {
+              "numberOfRentals": 0,
+              "starterPrice": 9,
+              "professionalPrice": 23,
+              "ultimatePrice": 37
+            },
+            {
+              "numberOfRentals": 50,
+              "starterPrice": 48,
+              "professionalPrice": 276,
+              "ultimatePrice": 388
+            },
+            {
+              "numberOfRentals": 100,
+              "starterPrice": 67,
+              "professionalPrice": 501,
+              "ultimatePrice": 688
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

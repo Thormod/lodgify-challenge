@@ -1,0 +1,48 @@
+{
+  "name": "lodgify-challenge",
+  "description": "Lodgify QA automation challenge",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Thormod/lodgify-challenge"
+  },
+  "author": "Lodgify QA Team & Thormodz",
+  "license": "MIT",
+  "devDependencies": {
+    "@commitlint/config-conventional": "^16.0.0",
+    "@ffmpeg-installer/ffmpeg": "^1.1.0",
+    "@semantic-release/changelog": "^6.0.1",
+    "@semantic-release/commit-analyzer": "^9.0.2",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/release-notes-generator": "^10.0.3",
+    "commitlint": "^16.0.2",
+    "cypress": "^9.0.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "husky": "^4.3.0",
+    "license-checker": "^25.0.1",
+    "semantic-release": "^18.0.1",
+    "start-server-and-test": "^1.14.0"
+  },
+  "scripts": {
+    "license-check": "license-checker --summary --failOn GPL",
+    "dev-server": "node server/server.js",
+    "install-all": "npm install && cd server && npm install",
+    "cy:open": "npx cypress open",
+    "cy:run": "npx cypress run --browser chrome",
+    "cy:ci": "start-server-and-test dev-server http://localhost:8080 cy:run",
+    "semantic-release": "semantic-release",
+    "lint:commit": "commitlint --from=HEAD~1",
+    "commit": "git cz"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  }
+}
