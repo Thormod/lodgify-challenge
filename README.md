@@ -72,3 +72,43 @@ Using the provided steps, everything should work as explained, if not, make sure
 In case you change your configuration, make sure to change your package.json file to run accordingly to avoid any kind of troubles or incompatibilities.
 
 Good luck!
+
+# Challenge Lodgify
+## Testing:
+Se usó cypress para realizar los tests, básicamente mi premisa fue realizar una prueba de integración donde simularamos una interacción real pero interceptando todos los llamados al backend o terceros y aparte revisando los elementos de la página, en el caso del slider usando TDD. Ppté por usar `data-automation` en vez de usar selectores porque estos le aportan mantenibilidad a la prueba (cuando fue posible). 
+Para correr las pruebas headless debes correr:
+```
+npm run cy:ci
+```
+Para correr las pruebas headed debes correr:
+```
+npm run dev-server
+y en otra terminal
+npm run cypress:open
+y seleccionar la prueba
+```
+
+Utilicé el modulo `start-server-and-test` para iniciar el servidor y las pruebas al mismo tiempo.
+
+## Buenas prácticas:
+Usé herramientas que nos permiten añadirle mantenibilidad al código fuente como lo son eslint y commitlint. (que son analizadores de código estático).
+
+## CI/CD:
+Se usó circleci como CI, toda la configuración se encuentra en `.circleci/config.yml`, creé varios Jobs que considero son básicos para mantener integridad del código, como lo son:
+- Instalar las dependencias
+- Un lint del código (que realizo en el pre-commit con husky) con un lint del commit (para usar la sintaxis de los commits y generar la versión de manera automática usando `semantic-release`) y una revisión de licencias de las librerías.
+- Pruebas de integración -> Opté por las pruebas de integración porque son las que mejor revisan el sistema, estamos realmente realizando una interacción real con el sistema sin dejar de ser pruebas de bajo nivel, rápidas y efectivas.
+- Creación de una imagen de docker, finalmente agregé un pequeño dockerfile para simular lo que haría el CI en caso de que las pruebas se ejecuten satisfactoriamente, que es generar la imagen nueva, buildearla y tagearla para luego hacerle push al hub de imagenes (done se tenga).
+
+Cada vez que un desarrollador crea una rama y envía un commit, circleci tiene un webhook que escucha y ejecuta los workflows según sea el caso (si es la rama principal ejecuta el build de la imagen).
+También configuré los branch protection rules para que no se pueda mergear nada sin que pasen las pruebas y sin que haya un PR.
+
+## Semantic release:
+Se usa para generar la versión que vamos a desplegar a partir de la sintaxis del commit que se mergee a la rama principal, en este caso configuré github para que solo permita squash and merge y solo llegue un commit. También instalé una herramienta de apoyo al desarolllador que permite crear commits con la sintaxis adecuada (siguiendo el estándar), para ello deben correr:
+```
+npm run commit
+```
+Cuando se corre el semantic release en el CI, el genera una imagen a partir del commit y crea un tag y un release en github, y usando esa misma versión se puede tagear la imagen para que todos esten relacionados con la misma versión.
+
+## Nota:
+Me hubiera gustado invertirle más tiempo, pero estoy en semana de despliegues y no tengo mucho tiempo disponible, porque son muchos sitios y nos exijen una regresión. Cualquier duda siempre a la ordén.

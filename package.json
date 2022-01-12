@@ -20,11 +20,13 @@
     "start-server-and-test": "^1.14.0"
   },
   "scripts": {
+    "license-check": "license-checker --summary --failOn GPL",
     "dev-server": "node server/server.js",
     "install-all": "npm install && cd server && npm install",
     "cy:open": "npx cypress open",
     "cy:run": "npx cypress run --browser chrome",
     "cy:ci": "start-server-and-test dev-server http://localhost:8080 cy:run",
+    "semantic-release": "semantic-release",
     "lint:commit": "commitlint --from=HEAD~1",
     "commit": "git cz"
   },

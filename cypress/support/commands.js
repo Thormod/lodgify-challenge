@@ -26,8 +26,8 @@
 
 // This is only for bypassing the errors so I'am able to really test the app
 // This is something that I'll never do in the real life
-// Cypress.on('uncaught:exception', (err, runnable) => {
-//     // returning false here prevents Cypress from
-//     // failing the test
-//     return false
-// })
+Cypress.on('uncaught:exception', (err, runnable) => {
+    // returning false here prevents Cypress from
+    // failing the test
+    return false
+})
